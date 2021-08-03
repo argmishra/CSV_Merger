@@ -3,11 +3,11 @@ package com.demo.csv.merger;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class CsVMap {
+public class CSVMap {
 
 	private Map<String, String> csvMap;
 
-	public CsVMap(String id) {
+	public CSVMap(String id) {
 		csvMap = new LinkedHashMap<>();
 	}
 

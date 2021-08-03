@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 
-public class CsvApplication {
+public class CSVApplication {
 	static String path = System.getProperty("user.dir") + "\\src\\com\\demo\\csv\\merger";
 	static String folderPath = path + "//files";
 
@@ -17,7 +17,7 @@ public class CsvApplication {
 
 		// List of list of headers and values
 		List<List<String>> headersList = extractHeader(listOfFiles);
-		List<List<CsVMap>> valueList = new ArrayList<>();
+		List<List<CSVMap>> valueList = new ArrayList<>();
 		for (int i = 0; i < headersList.size() && i < listOfFiles.length; ++i) {
 			valueList.add(CSVUtils.getRows(listOfFiles[i], headersList.get(i)));
 		}
@@ -29,7 +29,7 @@ public class CsvApplication {
 
 		// List of header and values
 		List<String> headers = new ArrayList<>();
-		List<CsVMap> values = new ArrayList<>();
+		List<CSVMap> values = new ArrayList<>();
 
 		for (List<String> innerlist : headersList) {
 			for (String i : innerlist) {
@@ -37,7 +37,7 @@ public class CsvApplication {
 			}
 		}
 
-		for (List<CsVMap> innerlist : valueList) {
+		for (List<CSVMap> innerlist : valueList) {
 			for (int i = 0; i < innerlist.size(); ++i) {
 				values.add(innerlist.get(i));
 			}

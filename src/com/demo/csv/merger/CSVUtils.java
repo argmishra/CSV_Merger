@@ -30,9 +30,9 @@ public class CSVUtils {
 		return headerList;
 	}
 
-	public static List<CsVMap> getRows(File file, List<String> keys) throws IOException {
+	public static List<CSVMap> getRows(File file, List<String> keys) throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader(file));
-		List<CsVMap> recordList = new ArrayList<>();
+		List<CSVMap> recordList = new ArrayList<>();
 		boolean checkHeader = true;
 
 		String line = null;
@@ -42,7 +42,7 @@ public class CSVUtils {
 				continue;
 			}
 
-			CsVMap records = new CsVMap(file.getName());
+			CSVMap records = new CSVMap(file.getName());
 			String[] value = line.split(",");
 			for (int i = 0; i < value.length; i++) {
 				if (keys.get(i).equals("MaturityDate")) {
@@ -66,7 +66,7 @@ public class CSVUtils {
 		return recordList;
 	}
 
-	public static void writeAndSaveFile(File file, List<String> headers, List<CsVMap> records) throws IOException {
+	public static void writeAndSaveFile(File file, List<String> headers, List<CSVMap> records) throws IOException {
 		FileWriter csvFile = new FileWriter(file);
 
 		String seprator = "";
@@ -79,7 +79,7 @@ public class CSVUtils {
 
 		csvFile.append("\n");
 
-		for (CsVMap record : records) {
+		for (CSVMap record : records) {
 			seprator = "";
 			for (int i = 0; i < headerArr.length; i++) {
 				csvFile.append(seprator);
